@@ -4,19 +4,14 @@ namespace PokemonConsole
     {
         public Player Player;
         public Map Map;
-        public int StartGame()
+        public Menu Menu;
+        public void StartGame()
         {
-            int option;
-            do{
-                Console.WriteLine("Bem vindo ao Pokemon Console");
-                Console.WriteLine();
-                Console.WriteLine("1. Novo Jogo");
-                Console.WriteLine("2. Carregar Jogo");
-                Console.WriteLine("0. Sair");
+            Console.WriteLine("Bem vindo ao Pokemon Console");
+            Console.WriteLine();
 
-            }while(!int.TryParse(Console.ReadLine(), out option));
-
-            return option;
+            var opt = new List<string>{"1. Novo Jogo", "2. Carregar Jogo", "0. Sair"};
+            this.Menu = new Menu(opt);
         }
         public void NewGame()
         {

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rzVfixHW8Nf7ha3m6dK9vdRcvOIdpEdYEx9th87VMaKh1BajmWrxvDegtA/Uc8/WiIOZiBTgye/FATL0hxrBrA==",
+  "dgSpecHash": "L8Fb2UODXP0bg2sunsZqZEgOAyixZQtuX2IjIvcCMuJP9p/ft+U3JoXMR8+gqvYKTznRPMGH6wQT7blR8XxNXA==",
   "success": true,
   "projectFilePath": "C:\\Users\\giovanni\\Desktop\\ngiovanni\\pokemon-console\\PokemonConsole\\PokemonConsole.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\giovanni\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
