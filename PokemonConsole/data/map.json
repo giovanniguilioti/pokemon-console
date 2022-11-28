@@ -15,25 +15,115 @@
         "map_is_inside": true,
         "map_outside": 2,
         "map_options": [
-            "1. Investigar",
-            "2. Falar com sua Mãe",
-            "3. Ir para o lado de fora"
+            "Investigar",
+            "Npcs",
+            "Sair"
+        ],
+        "map_npcs": [
+            1,
+            2,
+            3,
+            0
         ]
     },
     {
         "map_id": 2,
         "map_name": "Vila Inicial",
         "map_type" : 0,
-        "map_top": 2,
+        "map_top": 3,
         "map_right": -1,
         "map_bottom": -1,
         "map_left": -1,
         "map_is_inside": false,
         "map_outside": -1,
         "map_options": [
-            "1. Entrar em casa",
-            "2. Laboratorio",
-            "3. Rota 1"
+            "Npcs",
+            "Loja",
+            "Casas",
+            "Saidas"
+        ],
+        "map_npcs": [
+            0
+        ]
+    },
+    {
+        "map_id": 3,
+        "map_name": "Rota 1",
+        "map_type" : 1,
+        "map_top": 4,
+        "map_right": -1,
+        "map_bottom": 2,
+        "map_left": -1,
+        "map_is_inside": false,
+        "map_outside": -1,
+        "map_options": [
+            "Investigar",
+            "Encontrar Pokemon",
+            "Npcs",
+            "Saidas"
+        ],
+        "map_npcs": [
+            0
+        ]
+    },
+    {
+        "map_id": 4,
+        "map_name": "Chala Cave",
+        "map_type" : 3,
+        "map_top": 5,
+        "map_right": -1,
+        "map_bottom": 3,
+        "map_left": -1,
+        "map_is_inside": false,
+        "map_outside": -1,
+        "map_options": [
+            "Investigar",
+            "Encontrar Pokemon",
+            "Npcs",
+            "Saidas"
+        ],
+        "map_npcs": [
+            0
+        ]
+    },
+    {
+        "map_id": 5,
+        "map_name": "Junque Town",
+        "map_type" : 0,
+        "map_top": -1,
+        "map_right": -1,
+        "map_bottom": 4,
+        "map_left": -1,
+        "map_is_inside": false,
+        "map_outside": -1,
+        "map_options": [
+            "Npcs",
+            "Loja",
+            "Casas",
+            "Saidas"
+        ],
+        "map_npcs": [
+            0
+        ]
+    },
+    {
+        "map_id": 6,
+        "map_name": "Junque Gym",
+        "map_type" : 4,
+        "map_top": -1,
+        "map_right": -1,
+        "map_bottom": -1,
+        "map_left": -1,
+        "map_is_inside": true,
+        "map_outside": 5,
+        "map_options": [
+            "Investigar",
+            "Npcs",
+            "Enfrentar Lider",
+            "Sair"
+        ],
+        "map_npcs": [
+            0
         ]
     }
 ]

@@ -4,7 +4,6 @@ namespace PokemonConsole
     {
         public Player Player;
         public Map Map;
-        public Menu Menu;
         public void StartGame()
         {
             Console.WriteLine("Bem vindo ao Pokemon Console");

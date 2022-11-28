@@ -28,8 +28,13 @@ switch(option)
 while(true)
 {
     game.Map.ShowMap();
+
+    int count = 1;
     foreach(var opt in game.Map.map_options)
-        Console.WriteLine(opt);
+    {
+        Console.WriteLine(count + ". " + opt);
+        count++;
+    }
 
     switch(game.Map.map_type)
     {
