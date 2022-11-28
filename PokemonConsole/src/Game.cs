@@ -9,9 +9,9 @@ namespace PokemonConsole
         {
             Console.WriteLine("Bem vindo ao Pokemon Console");
             Console.WriteLine();
-
-            var opt = new List<string>{"1. Novo Jogo", "2. Carregar Jogo", "0. Sair"};
-            this.Menu = new Menu(opt);
+            Console.WriteLine("1. Novo Jogo");
+            Console.WriteLine("2. Carregar Jogo");
+            Console.WriteLine("3. Sair");
         }
         public void NewGame()
         {

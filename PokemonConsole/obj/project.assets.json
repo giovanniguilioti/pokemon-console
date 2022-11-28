@@ -55,19 +55,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\giovanni\\.nuget\\packages\\": {}
+    "C:\\Users\\giovanni.guilioti\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\giovanni\\Desktop\\ngiovanni\\pokemon-console\\PokemonConsole\\PokemonConsole.csproj",
+      "projectUniqueName": "C:\\Users\\giovanni.guilioti\\Desktop\\ngiovanni\\pokemon-console\\PokemonConsole\\PokemonConsole.csproj",
       "projectName": "PokemonConsole",
-      "projectPath": "C:\\Users\\giovanni\\Desktop\\ngiovanni\\pokemon-console\\PokemonConsole\\PokemonConsole.csproj",
-      "packagesPath": "C:\\Users\\giovanni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\giovanni\\Desktop\\ngiovanni\\pokemon-console\\PokemonConsole\\obj\\",
+      "projectPath": "C:\\Users\\giovanni.guilioti\\Desktop\\ngiovanni\\pokemon-console\\PokemonConsole\\PokemonConsole.csproj",
+      "packagesPath": "C:\\Users\\giovanni.guilioti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\giovanni.guilioti\\Desktop\\ngiovanni\\pokemon-console\\PokemonConsole\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\giovanni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\giovanni.guilioti\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
