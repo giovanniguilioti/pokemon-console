@@ -14,6 +14,7 @@ namespace PokemonConsole
         public int map_outside { get; set; }
         public List<string> map_options { get; set; }
         public List<int> map_npcs { get; set; }
+        public List<int> map_houses { get; set; }
 
         public Map(){}
         public Map(Map map)
@@ -25,6 +26,7 @@ namespace PokemonConsole
             this.map_exits = new List<int>();
             this.map_options = new List<string>();
             this.map_npcs = new List<int>();
+            this.map_houses = new List<int>();
 
             Console.WriteLine(this.map_name);
             
@@ -34,6 +36,8 @@ namespace PokemonConsole
                 this.map_npcs.Add(npc);
             foreach(var exit in map.map_exits)
                 this.map_exits.Add(exit);
+            foreach(var house in map.map_houses)
+                this.map_houses.Add(house);
         }
         public Map(int id, string name)
         {
@@ -59,7 +63,7 @@ namespace PokemonConsole
                     //Market();
                     break;
                 case 3:
-                    //ShowHouses();
+                    ShowHouses(this.map_id);
                     break;
                 case 4:
                     ShowExits(this.map_id);
@@ -82,10 +86,10 @@ namespace PokemonConsole
                     // EcontrarBatalha();
                     break;
                 case 3:
-                    //ShowNpcs();
+                    ShowNpcs(this.map_id);
                     break;
                 case 4:
-                    //Saidas();
+                    ShowExits(this.map_id);
                     break;
                 default:
                     break;
@@ -134,10 +138,10 @@ namespace PokemonConsole
                     //EncontrarBatalha();
                     break;
                 case 3:
-                    //ShowNpcs();
+                    ShowNpcs(this.map_id);
                     break;
                 case 4:
-                    //Saidas();
+                    ShowExits(this.map_id);
                     break;
                 default:
                     break;
@@ -154,7 +158,7 @@ namespace PokemonConsole
                     Investigar();
                     break;
                 case 2:
-                    // ShowNpcs();
+                    ShowNpcs(this.map_id);
                     break;
                 case 3:
                     //EnfrentarLider();
@@ -218,7 +222,10 @@ namespace PokemonConsole
             
             this.map_options.Add("Voltar");
             foreach(var exit in aux.map_exits)
-                this.map_options.Add(map[exit].map_name);
+            {
+                if(map[exit].map_name != "Vazio")
+                    this.map_options.Add(map[exit].map_name);
+            }
 
         }
         public void ReadExit()
@@ -229,6 +236,41 @@ namespace PokemonConsole
             if(option == 1)
             {
                 this.map_name = this.map_name.Replace(" Saidas", ""); 
+                this.map_options.Clear();
+
+                string file = ".\\data\\map.json";
+                var map = JsonConvert.DeserializeObject<List<Map>>(File.ReadAllText(file));
+                this.map_type = map[this.map_id].map_type;
+                foreach(var opt in map[this.map_id].map_options)
+                        this.map_options.Add(opt);
+                return;
+            }
+        }
+        public void ShowHouses(int id)
+        {
+            string file = ".\\data\\map.json";
+            var map = JsonConvert.DeserializeObject<List<Map>>(File.ReadAllText(file));
+            Map aux = new Map(map[id]);
+            this.map_name += " Casas";
+            this.map_type = MAPTYPE.HOUSE_INTERIOR;
+            this.map_options.Clear();
+            
+            foreach(var house in aux.map_houses)
+            {
+                if(map[house].map_name != "Vazio")
+                    this.map_options.Add(map[house].map_name);
+            }
+            this.map_options.Add("Voltar");
+        }
+        public void ReadHouses()
+        {
+            int option;
+            option = int.Parse(Console.ReadLine());
+
+            //voltar para o mapa
+            if(map_options[option-1] == "Voltar")
+            {
+                this.map_name = this.map_name.Replace(" Casas", ""); 
                 this.map_options.Clear();
 
                 string file = ".\\data\\map.json";

@@ -59,6 +59,9 @@ while(true)
         case MAPTYPE.EXIT:
             game.Map.ReadExit();
             break;
+        case MAPTYPE.HOUSE_INTERIOR:
+            game.Map.ReadHouses();
+            break;
         default:
             break;
     }

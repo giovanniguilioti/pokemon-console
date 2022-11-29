@@ -8,4 +8,5 @@ public enum MAPTYPE : int
     GYM = 4,
     NPC = 5,
     EXIT = 6,
+    HOUSE_INTERIOR = 7,
 }
