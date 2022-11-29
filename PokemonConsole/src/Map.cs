@@ -110,6 +110,7 @@ namespace PokemonConsole
                     string file = ".\\data\\map.json";
                     var map = JsonConvert.DeserializeObject<List<Map>>(File.ReadAllText(file));
                     Map aux = new Map(map[this.map_outside]);
+                    this.map_id = aux.map_id;
                     this.map_name = aux.map_name;
                     this.map_type = aux.map_type;
                     this.map_options.Clear();
