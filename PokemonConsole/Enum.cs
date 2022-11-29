@@ -7,4 +7,5 @@ public enum MAPTYPE : int
     CAVE = 3,
     GYM = 4,
     NPC = 5,
+    EXIT = 6,
 }

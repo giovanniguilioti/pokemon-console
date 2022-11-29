@@ -9,10 +9,7 @@ namespace PokemonConsole
         public int map_id { get; set; }
         public string map_name { get; set; }
         public MAPTYPE map_type { get; set; }
-        public int map_top { get; set; }
-        public int map_right { get; set; }
-        public int map_bottom { get; set; }
-        public int map_left { get; set; }
+        public List<int> map_exits { get; set; }
         public bool map_is_inside { get; set; }
         public int map_outside { get; set; }
         public List<string> map_options { get; set; }
@@ -25,6 +22,7 @@ namespace PokemonConsole
             this.map_name = map.map_name;
             this.map_type = map.map_type;
             this.map_outside = map.map_outside;
+            this.map_exits = new List<int>();
             this.map_options = new List<string>();
             this.map_npcs = new List<int>();
 
@@ -34,6 +32,8 @@ namespace PokemonConsole
                 this.map_options.Add(option);
             foreach(var npc in map.map_npcs)
                 this.map_npcs.Add(npc);
+            foreach(var exit in map.map_exits)
+                this.map_exits.Add(exit);
         }
         public Map(int id, string name)
         {
@@ -45,7 +45,6 @@ namespace PokemonConsole
             Console.Clear();
             Console.WriteLine(this.map_name);
         }
-
         public void ShowTown()
         {
             int option;
@@ -63,7 +62,7 @@ namespace PokemonConsole
                     //ShowHouses();
                     break;
                 case 4:
-                    //Saidas();
+                    ShowExits(this.map_id);
                     break;
                 default:
                     break;
@@ -207,7 +206,38 @@ namespace PokemonConsole
                         this.map_options.Add(opt);
                 return;
             }
+        }
+        public void ShowExits(int id)
+        {
+            string file = ".\\data\\map.json";
+            var map = JsonConvert.DeserializeObject<List<Map>>(File.ReadAllText(file));
+            Map aux = new Map(map[id]);
+            this.map_name += " Saidas";
+            this.map_type = MAPTYPE.EXIT;
+            this.map_options.Clear();
+            
+            this.map_options.Add("Voltar");
+            foreach(var exit in aux.map_exits)
+                this.map_options.Add(map[exit].map_name);
 
+        }
+        public void ReadExit()
+        {
+            int option;
+            option = int.Parse(Console.ReadLine());
+
+            if(option == 1)
+            {
+                this.map_name = this.map_name.Replace(" Saidas", ""); 
+                this.map_options.Clear();
+
+                string file = ".\\data\\map.json";
+                var map = JsonConvert.DeserializeObject<List<Map>>(File.ReadAllText(file));
+                this.map_type = map[this.map_id].map_type;
+                foreach(var opt in map[this.map_id].map_options)
+                        this.map_options.Add(opt);
+                return;
+            }
         }
     }
 }

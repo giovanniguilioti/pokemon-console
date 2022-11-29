@@ -56,6 +56,9 @@ while(true)
         case MAPTYPE.NPC:
             game.Map.ReadNpc(game.Map.map_npcs);
             break;
+        case MAPTYPE.EXIT:
+            game.Map.ReadExit();
+            break;
         default:
             break;
     }
