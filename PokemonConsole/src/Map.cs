@@ -1,3 +1,4 @@
+using PokemonConsole;
 using Newtonsoft.Json;
 
 namespace PokemonConsole
@@ -175,15 +176,37 @@ namespace PokemonConsole
             string file = ".\\data\\map.json";
             var map = JsonConvert.DeserializeObject<List<Map>>(File.ReadAllText(file));
             Map aux = new Map(map[id]);
-            Console.WriteLine("Entrei3");
             this.map_name += " Npcs";
+            this.map_type = MAPTYPE.NPC;
             this.map_options.Clear();
             
             string file_npc = ".\\data\\npc.json";
             var npcs = JsonConvert.DeserializeObject<List<Npc>>(File.ReadAllText(file_npc));
-            this.map_options.Clear();
             foreach(var npc in aux.map_npcs)
                 this.map_options.Add(npcs[npc].name);
+        }
+        public void ReadNpc(List<int> npc_list)
+        {
+            int option;
+            option = int.Parse(Console.ReadLine());
+
+            string file_npc = ".\\data\\npc.json";
+            var npcs = JsonConvert.DeserializeObject<List<Npc>>(File.ReadAllText(file_npc));
+
+            //voltar para o mapa
+            if(npcs[option-1].id == 0)
+            {
+                this.map_name = this.map_name.Replace(" Npcs", ""); 
+                this.map_options.Clear();
+
+                string file = ".\\data\\map.json";
+                var map = JsonConvert.DeserializeObject<List<Map>>(File.ReadAllText(file));
+                this.map_type = map[this.map_id].map_type;
+                foreach(var opt in map[this.map_id].map_options)
+                        this.map_options.Add(opt);
+                return;
+            }
+
         }
     }
 }

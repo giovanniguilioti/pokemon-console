@@ -53,8 +53,10 @@ while(true)
         case MAPTYPE.GYM:
             game.Map.ShowGym();
             break;
+        case MAPTYPE.NPC:
+            game.Map.ReadNpc(game.Map.map_npcs);
+            break;
+        default:
+            break;
     }
-
-    // return 0;
-
 }
