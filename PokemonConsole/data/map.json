@@ -43,7 +43,7 @@
             "Casas",
             "Saidas"
         ],
-        "map_npcs": [0]
+        "map_npcs": [0, 1, 2, 3]
     },
     {
         "map_id": 3,

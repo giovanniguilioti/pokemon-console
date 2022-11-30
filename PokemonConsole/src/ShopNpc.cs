@@ -1,7 +1,7 @@
 namespace PokemonConsole
 {
-    public class ShopNpc : Npc
-    {
+    // public class ShopNpc : Npc
+    // {
         
-    }
+    // }
 }

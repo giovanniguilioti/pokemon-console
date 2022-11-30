@@ -210,6 +210,11 @@ namespace PokemonConsole
                         this.map_options.Add(opt);
                 return;
             }
+
+            Console.Clear();
+            this.ShowMap();
+            Npc npc = new Npc(npcs[option-1]);
+            npc.ShowDialog();
         }
         public void ShowExits(int id)
         {

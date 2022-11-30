@@ -5,14 +5,17 @@
     },
     {
         "id": 1,
-        "name": "Mae"
+        "name": "Mae",
+        "dialog": "Oh que bom que acordou, seu pai está te esperando, fale com ele, e boa sorte nessa nova jornada"
     },
     {
         "id": 2,
-        "name": "Pai"
+        "name": "Pai",
+        "dialog": "Dialogo Pai"
     },
     {
         "id": 3,
-        "name": "irmã"
+        "name": "irmã",
+        "dialog": "Dialogo irmã"
     }
 ]
